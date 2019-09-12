@@ -5,10 +5,6 @@
     width: 100px;
     height: 40px;
     color: white;
-    border-radius: 3px;
-    position: absolute;
-    left: 45%;
-    top: 55%;
 }
 
 .botao:hover{
