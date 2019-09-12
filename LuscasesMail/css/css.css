@@ -1,0 +1,84 @@
+.botao{
+    background-color: #088A68;
+    padding: 10px;
+    border: 10px;
+    width: 100px;
+    height: 40px;
+    color: white;
+    border-radius: 3px;
+    position: absolute;
+    left: 45%;
+    top: 55%;
+}
+
+.botao:hover{
+    background-color: #04B486;
+    padding: 10px;
+    border: 10px;
+    width: 100px;
+    height: 40px;
+    color: white;
+}
+
+.botaoLimpar{
+    background-color: #FF8000;
+    color: white;
+    width: 50px;
+    height: 37px;
+    font-size: 10px;
+}
+
+.botaoLimpar:hover{
+    background-color: #EE5000;
+    color: white;
+}
+
+input
+{   
+    border: solid 1px;
+    border-color: #CCC;
+    border-radius: 2px;
+    height: 40px;
+    width: 250px;
+    padding-top: 3px;
+    outline: none;
+
+}
+
+input::placeholder
+{
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.inputAlerta {
+    color:  rgb(250, 9, 9);
+}
+.txtBoxValores{
+    border-color: #CCC;
+    height: 37px;
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+.txtBoxVazio{
+    border: solid 1px #FA5858;
+    border-radius: 2px;
+    border-spacing: -2px;
+}
+
+.txtBoxResult{
+    height: 37px;
+}
+
+.table1{
+    position: absolute;
+    left: 40%;
+    top: 25%;
+}
+
+.title1{
+    position: absolute;
+
+    top: 5%;
+}
