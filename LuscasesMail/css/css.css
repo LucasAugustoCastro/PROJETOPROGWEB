@@ -1,9 +1,12 @@
 .botao{
+    position: absolute;
     background-color: #088A68;
     padding: 10px;
     border: 10px;
     width: 100px;
     height: 40px;
+    left: 150px;
+    
     color: white;
 }
 
@@ -31,6 +34,9 @@
 
 input
 {   
+    position: relative;
+    left: 25px;
+    display: block;
     border: solid 1px;
     border-color: #CCC;
     border-radius: 2px;
@@ -38,7 +44,7 @@ input
     width: 250px;
     padding-top: 3px;
     outline: none;
-
+    padding: 0px;
 }
 
 input::placeholder
@@ -67,10 +73,16 @@ input::placeholder
     height: 37px;
 }
 
-.table1{
+.div1{
+    
+    
     position: absolute;
     left: 40%;
     top: 25%;
+    padding:50px;
+    background:white;
+    
+
 }
 
 .title1{
@@ -78,3 +90,13 @@ input::placeholder
 
     top: 5%;
 }
+.background{
+    background-image: url("../img/fundo.jpg");
+    margin: 0px;
+    padding:0px;
+}
+
+.centroTexto{
+    text-align: center;
+}
+
