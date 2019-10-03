@@ -32,8 +32,12 @@
     color: white;
 }
 
-input
-{   
+.inputAlerta {
+    color:  rgb(250, 9, 9);
+}
+.txtBoxValores{
+	padding-left: 20px;
+	padding-top: 10px;
     position: relative;
     left: 25px;
     display: block;
@@ -44,23 +48,6 @@ input
     width: 250px;
     padding-top: 3px;
     outline: none;
-    padding: 0px;
-}
-
-input::placeholder
-{
-    padding-left: 20px;
-    padding-top: 10px;
-}
-
-.inputAlerta {
-    color:  rgb(250, 9, 9);
-}
-.txtBoxValores{
-    border-color: #CCC;
-    height: 37px;
-    border-width: 1px;
-    border-radius: 4px;
 }
 
 .txtBoxVazio{
