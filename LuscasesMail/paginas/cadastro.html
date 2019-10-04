@@ -16,31 +16,16 @@
                     </tr>
                     <tr>
                         <td>
-                            <div id="divNome"><input type="text" id="tNome" placeholder="Nome" class="txtBoxValores" size="60" /></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="divEmail"><input type="text" id="tEmail" placeholder="E-mail" class="txtBoxValores" size="60" /></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div id="divSenha"><input type="password" id="pSenha" placeholder="Senha" class="txtBoxValores" size="60" /></div>
-                        </td>
-                    </tr>
-                    
-                    <tr>
-                        <td>
-                            <div id="divConfSenha"><input type="password" id="pConf" placeholder="Confirme a senha" class="txtBoxValores" size="60" /></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <button id="bCriar" class="botao"> Criar Conta </button>
+                            <form action="script.php" method="post">
+                                Nome: <input type=text name=nome><br>
+                                E-mail: <input type=text name=email><br>
+                                Senha: <input type=text name=senha><br>
+                                <input id="bCriarConta" type=submit class="botao" value="Criar Conta">
+                            </form>
                         </td>
                     </tr>
                 </table>
 
     </body>
+
 </html>
