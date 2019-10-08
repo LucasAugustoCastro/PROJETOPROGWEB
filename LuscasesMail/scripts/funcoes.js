@@ -3,8 +3,10 @@ $(document).ready(function(){
         fVerificarVazio();
         fVerificarSenha();
     });
+});
 
-
+$(window).on('load', function() {	
+	$(".loading").fadeOut("slow");
 });
 
 function fVerificarVazio() {

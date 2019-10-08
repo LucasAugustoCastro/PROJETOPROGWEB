@@ -3,63 +3,64 @@
 		<meta charset="UTF-8" /> 
         <link rel="stylesheet" type="text/css" href="css/css.css"/>
         <script type="text/javascript" src="scripts/jquery.js"></script>
-        <script type="text/javascript" src="scripts/funcoes.js"></script>		
+        <script type="text/javascript" src="scripts/funcoes.js"></script>	
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>		
+		
     </head>
 
     <body class = "background">
-        <div class = "div1">
-            <table id= "tabela">
-                <tr>
-                    <td>
-                        <div><h2>Bem-Vindo ao Luscases Mail</h3></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td><br><h3>Login</h3></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label class="field a-field a-field_a1">
-                            <input class="field__input a-field__input" placeholder="fiuk@luscasesmail.com" required>
-                            <span class="a-field__label-wrap">
-                                <span class="a-field__label">E-mail</span>
-                            </span>
-                        </label>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                            <label class="field a-field a-field_a2">
-                                    <input type="password" class="field__input a-field__input" placeholder=" " required>
-                                    <span class="a-field__label-wrap">
-                                      <span class="a-field__label">Senha</span>
-                                    </span>
-                                  </label>
-                    </td>
-                </tr>
-                
-                <tr>
-                    <td>
-                        <div id="divAviso" class="inputAlerta"></div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-						<br><h5>
-                        Precisa de cadastro? <a href="paginas/cadastro.php">Clique aqui.</a></h5>						
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-						<br>
-                        <div align="center" id="divEntrar"><button id="bEntrar" class="botao"> Entrar </button></div>
-                    </td>
-                </tr>
-            </table>
-        </div>
-
-        
-
-        
+		<div class="loading"></div>
+			<div class = "div1">
+				<table>
+					<tr>
+						<td>
+							<div><h2>Bem-Vindo ao Luscases Mail</h3></div>
+						</td>
+					</tr>
+					<tr>
+						<td><br><h3>Login</h3></td>
+					</tr>
+					<tr>
+						<td>
+							<label class="field a-field a-field_a1">
+								<input class="field__input a-field__input" placeholder="fiuk@luscasesmail.com" required>
+								<span class="a-field__label-wrap">
+									<span class="a-field__label">E-mail</span>
+								</span>
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+								<label class="field a-field a-field_a2">
+										<input type="password" class="field__input a-field__input" placeholder=" " required>
+										<span class="a-field__label-wrap">
+										  <span class="a-field__label">Senha</span>
+										</span>
+									  </label>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div id="divAviso" class="inputAlerta"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br><h5>
+							Precisa de cadastro? <a href="paginas/cadastro.php">Clique aqui.</a></h5>						
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<br>
+							<div align="center" id="divEntrar"><button id="bEntrar" class="botao"> Entrar </button></div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		       
     </body>
 </html>
