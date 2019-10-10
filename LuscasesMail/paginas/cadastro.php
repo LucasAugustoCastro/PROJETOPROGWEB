@@ -11,47 +11,51 @@
     <body class = "background">
 		<div class="loading"></div>
 			<div class = "div1"> 
+			<!--<table><h2>Bem-Vindo ao Luscases Mail</h2></table>-->
 				<table>					
 					<tr>
-						<td colspan="2">
-							<div><h2>Bem-Vindo ao Luscases Mail</h3></div>
+						<td><h3>Cadastro</h3></td>
+					</tr>
+				</table>	
+				<table>
+					<form action="script.php" method="post">
+					<tr>
+						<td>
+							<label class="field a-field a-field_a2">
+								<input type="text" class="field__input a-field__input" placeholder=" " required name="nome">
+								<span class="a-field__label-wrap">
+									<span class="a-field__label">Nome</span>
+								</span>
+							</label>
 						</td>
 					</tr>
 					<tr>
-						<td><br><h3>Cadastro</h3></td>
-					</tr>
-				</table>	
-				<table class="tableCadastro">
-					<form action="script.php" method="post">
-					<tr><td class="textCadastro">Nome: </td>
 						<td>
 							<label class="field a-field a-field_a2">
 								<input type="text" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap"></span>
+								<span class="a-field__label-wrap">
+									<span class="a-field__label">E-mail</span>
+								</span>
 							</label>
 						</td>
 					</tr>
-					<tr><td class="textCadastro">E-mail: </td>
-						<td>
-							<label class="field a-field a-field_a2">
-								<input type="text" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap"></span>
-							</label>
-						</td>
-					</tr>
-					<tr><td class="textCadastro">Senha: </td>
+					<tr>
 						<td>
 							<label class="field a-field a-field_a2">
 								<input type="password" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap"></span>
+								<span class="a-field__label-wrap">
+									<span class="a-field__label">Senha</span>
+								</span>
 							</label>
 						</td>
 					</tr>
-					<tr><td class="textCadastro">Confirme a Senha: </td>
+					<tr>
 						<td>
 							<label class="field a-field a-field_a2">
 								<input type="password" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap"></span>
+								<span class="a-field__label-wrap">
+									<span class="a-field__label">Confirme Senha</span>
+								</span>
 							</label>
 						</td>
 					</tr>
