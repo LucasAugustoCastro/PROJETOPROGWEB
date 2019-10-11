@@ -9,6 +9,7 @@ $(window).on('load', function() {
 	$(".loading").fadeOut("slow");
 });
 
+
 function fVerificarVazio() {
 
     $("input").each(function(){
