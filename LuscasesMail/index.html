@@ -18,10 +18,11 @@
 					<tr>
 						<td><h3>Login</h3></td>
 					</tr>
+					<form id="loginform" method="post">
 					<tr>
 						<td align="center">
 							<label class="field a-field a-field_a1">
-								<input class="field__input a-field__input" placeholder="fiuk@luscasesmail.com" required>
+								<input name="email" class="field__input a-field__input" placeholder="fiuk@luscasesmail.com" required>
 								<span class="a-field__label-wrap">
 									<span class="a-field__label">E-mail</span>
 								</span>
@@ -31,7 +32,7 @@
 					<tr>
 						<td align="center">
 								<label class="field a-field a-field_a2">
-										<input type="password" class="field__input a-field__input" placeholder=" " required>
+										<input name="senha" type="password" class="field__input a-field__input" placeholder=" " required>
 										<span class="a-field__label-wrap">
 										  <span class="a-field__label">Senha</span>
 										</span>
@@ -52,9 +53,10 @@
 					<tr>
 						<td>
 							<br>
-							<div align="center" id="divEntrar"><button id="bEntrar" class="botao"> Entrar </button></div>
+							<div align="center" id="divEntrar"><input type="submit" class="botao" value="Login" /></div>
 						</td>
 					</tr>
+					</form>
 				</table>
 				</div>
 			</div>

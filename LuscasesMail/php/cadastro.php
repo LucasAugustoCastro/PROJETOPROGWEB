@@ -13,11 +13,13 @@
 	
 	$busca = file_get_contents('../database/contas/contas.xml');
 		if (strpos($busca, $_POST['email']) !== false) {
-			echo "E-mail {$_POST['email']} já existe!";
+			echo json_encode(array('success' => 0));			
 		}
 		else{
 			$xml->getElementsByTagName("contas")->item(0)->appendChild($xml_userinfo);
 			$xml->save("../database/contas/contas.xml");
-		echo "Conta {$_POST['email']} criada com sucesso!";		
+			echo json_encode(array('success' => 1));
+			
 	}	
+	
 ?>
