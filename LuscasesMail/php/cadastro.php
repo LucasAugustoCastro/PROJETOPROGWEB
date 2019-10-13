@@ -4,28 +4,22 @@
 	$xml->formatOutput = true;
 	$xml->load("../database/contas/contas.xml");	
 	
+	//$xml_contas = $xml->createElement("contas");
     $xml_userinfo = $xml->createElement("userinfo");
 	
 	$xml_userinfo->setAttribute("nome",$_POST['nome']);
     $xml_userinfo->setAttribute("email",$_POST['email']);
     $xml_userinfo->setAttribute("senha",$_POST['senha']);
 	
-	$busca = simplexml_load_file('../database/contas/contas.xml');
-	
-	foreach($busca as $contas) {	
-		if( $contas['email'] == $_POST['email']){
-			$achou = true;        
-		} else {
-			$achou = false;
+	$busca = file_get_contents('../database/contas/contas.xml');
+		if (strpos($busca, $_POST['email']) !== false) {
+			echo json_encode(array('success' => 0));			
 		}
-	}
-
-	if ($achou){
-		echo json_encode(array('success' => 0));	
-	} else {
-		$xml->getElementsByTagName("database")->item(0)->appendChild($xml_userinfo);
-		$xml->save("../database/contas/contas.xml");
-		echo json_encode(array('success' => 1));	
+		else{
+			$xml->getElementsByTagName("contas")->item(0)->appendChild($xml_userinfo);
+			$xml->save("../database/contas/contas.xml");
+			echo json_encode(array('success' => 1));
+			
 	}	
 	
 ?>

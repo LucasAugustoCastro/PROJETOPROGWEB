@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<database>
-  <userinfo nome="a" email="a" senha="a"/>
-  <userinfo nome="a" email="b" senha="a"/>
-  <userinfo nome="aa" email="aa" senha="aa"/>
-</database>
+<contas>
+  <userinfo nome="a" email="aaaa" senha="a"/>
+  <userinfo nome="11" email="11" senha="11"/>
+</contas>
