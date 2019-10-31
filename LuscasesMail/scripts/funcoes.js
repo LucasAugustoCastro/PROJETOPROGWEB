@@ -9,24 +9,52 @@ $(document).ready(function(){
 	$('#loginform').submit(function(e) {
 	e.preventDefault();
 	$.ajax({
-		type: "POST",
+		type: "POST",		
 		url: 'php/login.php',
 		data: $(this).serialize(),
+		beforeSend: function(){				   
+            $("#loginLoading").show();
+			
+				//delay teste
+						var i = 0;
+						function testt() {
+							i++;
+							console.log(i);
+							if (i < 1000) {
+								testt();
+							}
+						}
+						testt();
+						return true;
+				//					
+		},
 		success: function(response)
 		{
-			var jsonData = JSON.parse(response);
-  
+			var jsonData = JSON.parse(response);			
 			if (jsonData.success == "1")
-			{
-				alert('Logado com sucesso!');
-				location.href = 'paginas/caixa_entrada.html';
+			{				
+				document.getElementById("divAviso").className = "loginSucess";				
+				document.getElementById("divAviso").innerHTML = "<br><h5>Logado com sucesso.</h5>";
+				//location.href = 'paginas/caixa_entrada.html';
 			}
 			else
 			{
-				alert('Email ou senha não encontrados!');
+				document.getElementById("divAviso").className = "loginFail";
+				document.getElementById("divAviso").innerHTML = "<br><h5>Email ou senha incorretos.</h5>";
 			}
-	   }
+	   },
+	   complete:function(data){			
+			$("#loginLoading").hide();
+		   }
    });
+ });
+ 
+  $("#loading").ajaxStart(function () {
+    $(this).show();
+ });
+
+ $("#loading").ajaxStop(function () {
+   $(this).hide();
  });
  
 	//Registro
