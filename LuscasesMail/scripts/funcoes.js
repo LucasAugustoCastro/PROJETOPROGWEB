@@ -1,5 +1,10 @@
 $(document).ready(function(){
 	
+	var bgColorArray = ['../img/bg/1.jpg','../img/bg/2.jpg'],
+		selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+
+	$('body').css('background', 'url(' + selectBG + ')')
+	
     $("#bEntrar").click(function(){
         fVerificarVazio();
         fVerificarSenha();
@@ -64,20 +69,46 @@ $(document).ready(function(){
 		type: "POST",
 		url: '../php/cadastro.php',
 		data: $(this).serialize(),
+		beforeSend: function(){				   
+            $("#loginLoading").show();
+			
+				//delay teste
+						var i = 0;
+						function testt() {
+							i++;
+							console.log(i);
+							if (i < 1000) {
+								testt();
+							}
+						}
+						testt();
+						return true;
+				//					
+		},
 		success: function(response)
 		{
 			var jsonData = JSON.parse(response);
   
 			if (jsonData.success == "1")
 			{
-				alert('Conta criada com sucesso!');	
-				location.href = 'paginas/caixa_entrada.html';				
+				document.getElementById("divAviso").className = "loginSucess";				
+				document.getElementById("divAviso").innerHTML = "<br><h5>Conta criada com sucesso.</h5>";
+				//location.href = 'paginas/caixa_entrada.html';				
+			}
+			else if (jsonData.success == "2")
+			{
+				document.getElementById("divAviso").className = "loginFail";
+				document.getElementById("divAviso").innerHTML = "<br><h5>Senhas n?o coincidem!</h5>";							
 			}
 			else
 			{
-				alert('Email já existe!');
+				document.getElementById("divAviso").className = "loginFail";
+				document.getElementById("divAviso").innerHTML = "<br><h5>Email j? existe!</h5>";
 			}
-	   }
+	   },
+	   complete:function(data){			
+			$("#loginLoading").hide();
+		   }
    });
  });
 	

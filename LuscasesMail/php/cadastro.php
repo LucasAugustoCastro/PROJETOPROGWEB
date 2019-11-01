@@ -15,6 +15,9 @@
 		if (strpos($busca, $_POST['email']) !== false) {
 			echo json_encode(array('success' => 0));			
 		}
+		else if($_POST['senha'] != $_POST['confirmaSenha']){
+			echo json_encode(array('success' => 2));
+		}
 		else{
 			$xml->getElementsByTagName("contas")->item(0)->appendChild($xml_userinfo);
 			$xml->save("../database/contas/contas.xml");
