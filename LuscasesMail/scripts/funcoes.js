@@ -17,7 +17,9 @@ $(document).ready(function(){
 		type: "POST",		
 		url: 'php/login.php',
 		data: $(this).serialize(),
-		beforeSend: function(){				   
+		beforeSend: function(){		
+			document.getElementById("divAviso").innerHTML = "";		
+			document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
             $("#loginLoading").show();
 			
 				//delay teste
@@ -69,9 +71,10 @@ $(document).ready(function(){
 		type: "POST",
 		url: '../php/cadastro.php',
 		data: $(this).serialize(),
-		beforeSend: function(){				   
+		beforeSend: function(){			
+			document.getElementById("divAviso").innerHTML = "";
+			document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
             $("#loginLoading").show();
-			
 				//delay teste
 						var i = 0;
 						function testt() {
