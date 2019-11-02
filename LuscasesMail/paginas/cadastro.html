@@ -1,88 +1,90 @@
 <html>
     <head>
 		<meta charset="UTF-8" /> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../css/css.css"/>
         <script type="text/javascript" src="../scripts/jquery.js"></script>
         <script type="text/javascript" src="../scripts/funcoes.js"></script>	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>	
-    </head>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+   </head>
 
     <body class = "background">
 		<div class="loading"></div>
-			<div class = "div1"> 
-			<!--<table><h2>Bem-Vindo ao Luscases Mail</h2></table>-->
-				<table>					
-					<tr>
-						<td><h3>Cadastro</h3></td>
-					</tr>
-				</table>	
-				<table>
-					<form id="registerform" action="../php/cadastro.php" method="post">
-					<tr>
-						<td>
-							<label class="field a-field a-field_a2">
-								<input name="nome" type="text" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap">
-									<span class="a-field__label">Nome</span>
-								</span>
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="field a-field a-field_a2">
-								<input name="email" type="text" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap">
-									<span class="a-field__label">E-mail</span>
-								</span>
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="field a-field a-field_a2">
-								<input name="senha" type="password" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap">
-									<span class="a-field__label">Senha</span>
-								</span>
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label class="field a-field a-field_a2">
-								<input name="confirmaSenha" type="password" class="field__input a-field__input" placeholder=" " required name="nome">
-								<span class="a-field__label-wrap">
-									<span class="a-field__label">Confirme Senha</span>
-								</span>
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td align="center">
-								<div id='loginLoading' style='display: none;'>									
-								</div>
-								<div id="divAviso">
-							</div>
-						</td>
-					</tr>
-						<tr>
-							<td colspan="2">
-								<br>
-								<div align="center">
-								<input id="bCriarConta" type=submit class="botao" value="Criar Conta">     </div>                       
-							</td>
-						</tr>					
-						</form>
-					<tr>
-						<td>
-							<br><h6><a href="../">Voltar</a></h5>						
-						</td>
-					</tr>
-					</table>
-		</div>
-
+			<div class="container h-100">
+				<div class="row h-100 justify-content-center align-items-center">
+					<div class = "div1"> 
+					<!--<table><h2>Bem-Vindo ao Luscases Mail</h2></table>-->
+						<table>					
+							<tr>
+								<td><h3>Cadastro</h3></td>
+							</tr>
+						</table>	
+						<table>
+							<form id="registerform" action="../php/cadastro.php" method="post">
+							<tr>
+								<td>
+									<label class="field a-field a-field_a1">
+										<input name="nome" type="text" class="field__input a-field__input" placeholder=" " required name="nome">
+										<span class="a-field__label-wrap">
+											<span class="a-field__label">Nome</span>
+										</span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="field a-field a-field_a1">
+										<input name="email" type="text" class="field__input a-field__input" placeholder=" " required name="nome">
+										<span class="a-field__label-wrap">
+											<span class="a-field__label">E-mail</span>
+										</span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="field a-field a-field_a1">
+										<input name="senha" type="password" class="field__input a-field__input" placeholder=" " required name="nome">
+										<span class="a-field__label-wrap">
+											<span class="a-field__label">Senha</span>
+										</span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="field a-field a-field_a1">
+										<input name="confirmaSenha" type="password" class="field__input a-field__input" placeholder=" " required name="nome">
+										<span class="a-field__label-wrap">
+											<span class="a-field__label">Confirme Senha</span>
+										</span>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+										<div id="loginLoading" class="d-none"></div>
+										<div id="divAviso"></div>
+								</td>
+							</tr>
+								<tr>
+									<td colspan="2">
+										<br>
+										<div align="center">
+										<input id="bCriarConta" type=submit class="botao" value="Criar Conta">     </div>                       
+									</td>
+								</tr>					
+								</form>
+							<tr>
+								<td>
+									<br><h6><a href="../">Voltar</a></h5>						
+								</td>
+							</tr>
+						</table>
+				</div>
+			</div>
+		</div>				
     </body>
 
 </html>

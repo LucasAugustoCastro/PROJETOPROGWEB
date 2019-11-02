@@ -1,10 +1,4 @@
 <?xml version="1.0"?>
 <contas>
   <userinfo nome="a" email="a" senha="a"/>
-  <userinfo nome="adsa" email="dsa" senha="dsadsa"/>
-  <userinfo nome="adsa" email="dsaaa" senha="dsadsa"/>
-  <userinfo nome="adsa" email="dsaaaaa" senha="dsadsa"/>
-  <userinfo nome="adsa" email="dsaaaaaa" senha="dsadsa"/>
-  <userinfo nome="adsa" email="dsaaaaaaa" senha="aaa"/>
-  <userinfo nome="adsa" email="assas" senha="a"/>
 </contas>

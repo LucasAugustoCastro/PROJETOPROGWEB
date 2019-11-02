@@ -1,67 +1,70 @@
 <html>
     <head>
 		<meta charset="UTF-8" /> 
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
         <link rel="stylesheet" type="text/css" href="css/css.css"/>
         <script type="text/javascript" src="scripts/jquery.js"></script>
         <script type="text/javascript" src="scripts/funcoes.js"></script>	
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>		
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>	
 		
-    </head>
+	</head>
 
     <body class = "background">
 		<div class="loading"></div>
-			<div class = "div1">
-			<!--<table><h2>Bem-Vindo ao Luscases Mail</h2></table-->
-			<div align="center">
-				<table>
-					<tr>
-						<td><h3>Login</h3></td>
-					</tr>
-					<form id="loginform" method="post">
-					<tr>
-						<td align="center">
-							<label class="field a-field a-field_a1">
-								<input name="email" class="field__input a-field__input" placeholder="fiuk@luscasesmail.com" required>
-								<span class="a-field__label-wrap">
-									<span class="a-field__label">E-mail</span>
-								</span>
-							</label>
-						</td>
-					</tr>
-					<tr>
-						<td align="center">
-								<label class="field a-field a-field_a2">
-										<input name="senha" type="password" class="field__input a-field__input" placeholder=" " required>
+			<div class="container h-100">
+				<div class="row h-100 justify-content-center align-items-center">
+					<div class = "div1">
+					<!--<table><h2>Bem-Vindo ao Luscases Mail</h2></table-->
+						<table>
+							<tr>
+								<td><h3>Login</h3></td>
+							</tr>
+						</table>	
+						<table>
+							<form id="loginform" method="post">
+							<tr>
+								<td align="center">
+									<label class="field a-field a-field_a1">
+										<input name="email" class="field__input a-field__input" placeholder="fiuk@luscasesmail.com" required>
 										<span class="a-field__label-wrap">
-										  <span class="a-field__label">Senha</span>
+											<span class="a-field__label">E-mail</span>
 										</span>
-								</label>
-						</td>
-					</tr>
-					<tr>
-						<td align="center">
-								<div id='loginLoading' style='display: none;'>								
-								</div>
-								<div id="divAviso">
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<br><h5>Precisa de cadastro? <a href="paginas/cadastro.html">Clique aqui.</a></h5>						
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<br>
-							<div align="center" id="divEntrar"><input type="submit" class="botao" value="Login" /></div>
-						</td>
-					</tr>
-					</form>
-				</table>
-				</div>
+									</label>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+										<label class="field a-field a-field_a1">
+												<input name="senha" type="password" class="field__input a-field__input" placeholder=" " required>
+												<span class="a-field__label-wrap">
+												  <span class="a-field__label">Senha</span>
+												</span>
+										</label>
+								</td>
+							</tr>
+							<tr>
+								<td align="center">
+										<div id="loginLoading" class="d-none"></div>
+										<div id="divAviso"></div>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br><h5>Precisa de cadastro? <a href="paginas/cadastro.html">Clique aqui.</a></h5>						
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<br>
+									<div align="center" id="divEntrar"><input type="submit" class="botao" value="Login" /></div>
+								</td>
+							</tr>
+							</form>
+						</table>				
+					</div>
 			</div>
-		       
+		</div>
     </body>
 </html>

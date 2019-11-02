@@ -42,6 +42,7 @@ h6{
 }
 
 h5{
+	font-size: 14px;
 	text-align: center;
     padding: 0px;
     margin: 0px;
@@ -50,6 +51,8 @@ h5{
 }
 
 h3{
+	font-weight: bold;
+	font-size: 20px;
     padding: 0px;
     margin: 0px;
 	font-family: "Century Gothic"; 	
@@ -72,6 +75,7 @@ h1{
 
 
 .botao{    
+	font-size: 14px;
 	border-radius: 6px;
 	border: none;
 	display: flex; justify-content: center; 
@@ -138,18 +142,10 @@ h1{
     height: 37px;
 }
 
-.div1{   
-    
- position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%); /* for IE 9 */
-  -webkit-transform: translate(-50%, -50%); /* for Safari */
+.div1{     
     padding:50px;
     background:white;
-    
-
+   -webkit-font-smoothing: subpixel-antialiased 
 }
 
 .title1{
@@ -381,37 +377,6 @@ LEVEL 1. RESET STYLES
   .field{
     --fieldBorderColor: #c4e9cb;
     --fieldBorderColorActive: #49804a;
-  }
-  
-  /*
-  =====
-  DEMO
-  =====
-  */
-  
-  body{ 
-    margin: 0;    
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .page{
-    box-sizing: border-box;
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    padding: 15px;
-    
-    display: grid;
-    grid-gap: 30px;
-    align-items: flex-end;
-    order: 1;
-  }
-  
-  @media (min-width: 481px){
-    
-    .page{
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    }
-  }
+  }  
+
+}

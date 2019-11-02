@@ -1,4 +1,11 @@
 $(document).ready(function(){
+	$("#loading").ajaxStart(function () {
+		$(this).show();
+	 });
+
+	$("#loading").ajaxStop(function () {
+	   $(this).hide();
+	 });
 	
 	var bgColorArray = ['../img/bg/1.jpg','../img/bg/2.jpg'],
 		selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
@@ -20,20 +27,7 @@ $(document).ready(function(){
 		beforeSend: function(){		
 			document.getElementById("divAviso").innerHTML = "";		
 			document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
-            $("#loginLoading").show();
-			
-				//delay teste
-						var i = 0;
-						function testt() {
-							i++;
-							console.log(i);
-							if (i < 1000) {
-								testt();
-							}
-						}
-						testt();
-						return true;
-				//					
+			$("#loginLoading").removeClass('d-none');			
 		},
 		success: function(response)
 		{
@@ -51,18 +45,11 @@ $(document).ready(function(){
 			}
 	   },
 	   complete:function(data){			
-			$("#loginLoading").hide();
+			$("#loginLoading").addClass('d-none'); 
 		   }
    });
  });
  
-  $("#loading").ajaxStart(function () {
-    $(this).show();
- });
-
- $("#loading").ajaxStop(function () {
-   $(this).hide();
- });
  
 	//Registro
  	$('#registerform').submit(function(e) {
@@ -72,21 +59,9 @@ $(document).ready(function(){
 		url: '../php/cadastro.php',
 		data: $(this).serialize(),
 		beforeSend: function(){			
-			document.getElementById("divAviso").innerHTML = "";
+	    	document.getElementById("divAviso").innerHTML = "";		
 			document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
-            $("#loginLoading").show();
-				//delay teste
-						var i = 0;
-						function testt() {
-							i++;
-							console.log(i);
-							if (i < 1000) {
-								testt();
-							}
-						}
-						testt();
-						return true;
-				//					
+			$("#loginLoading").removeClass('d-none');			
 		},
 		success: function(response)
 		{
@@ -110,7 +85,7 @@ $(document).ready(function(){
 			}
 	   },
 	   complete:function(data){			
-			$("#loginLoading").hide();
+			$("#loginLoading").addClass('d-none');
 		   }
    });
  });
