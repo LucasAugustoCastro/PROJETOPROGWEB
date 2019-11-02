@@ -311,9 +311,14 @@ LEVEL 1. RESET STYLES
     will-change: border-color;
   }
   
-  .a-field_a1 .a-field__input:focus{
+    .a-field_a1 .a-field__input:focus{
     border-color: var(--fieldBorderColorActive);
   }
+  
+  .a-field_a1 .a-field__input:invalid{ 
+	--fieldBorderColorActive: #b53c45; 
+	box-shadow:none;	
+}
   
   /* a-field_a2 */
   
@@ -378,7 +383,3 @@ LEVEL 1. RESET STYLES
     --fieldBorderColor: #c4e9cb;
     --fieldBorderColorActive: #49804a;
   }  
-
-.a-field_a1 .a-field__input:invalid{ 
-	--fieldBorderColorActive: #b53c45;  	
-}
