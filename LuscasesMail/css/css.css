@@ -379,4 +379,6 @@ LEVEL 1. RESET STYLES
     --fieldBorderColorActive: #49804a;
   }  
 
+.a-field_a1 .a-field__input:invalid{ 
+	--fieldBorderColorActive: #b53c45;  	
 }
