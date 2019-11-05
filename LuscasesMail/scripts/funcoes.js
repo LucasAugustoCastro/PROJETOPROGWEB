@@ -25,9 +25,10 @@ $(document).ready(function(){
 		url: 'php/login.php',
 		data: $(this).serialize(),
 		beforeSend: function(){		
+			$("#botao").prop("disabled", true).addClass('botaoLoading').removeClass('botao').val('');
 			document.getElementById("divAviso").innerHTML = "";		
-			document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
-			$("#loginLoading").removeClass('d-none');			
+			//document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
+			$("#loginLoading").removeClass('d-none');		
 		},
 		success: function(response)
 		{
@@ -45,6 +46,7 @@ $(document).ready(function(){
 			}
 	   },
 	   complete:function(data){			
+			$("#botao").addClass('botao').removeClass('botaoLoading').val('Login').removeAttr('disabled');
 			$("#loginLoading").addClass('d-none'); 
 		   }
    });
@@ -59,9 +61,10 @@ $(document).ready(function(){
 		url: '../php/cadastro.php',
 		data: $(this).serialize(),
 		beforeSend: function(){			
+			$("#bCriarConta").prop("disabled", true).addClass('botaoLoading').removeClass('botao').val('');
 	    	document.getElementById("divAviso").innerHTML = "";		
-			document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
-			$("#loginLoading").removeClass('d-none');			
+			//document.getElementById("loginLoading").innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";
+			$("#loginLoading").removeClass('d-none');									
 		},
 		success: function(response)
 		{
@@ -84,7 +87,8 @@ $(document).ready(function(){
 				document.getElementById("divAviso").innerHTML = "<br><h5>Email j? existe!</h5>";
 			}
 	   },
-	   complete:function(data){			
+	   complete:function(data){		
+			$("#bCriarConta").addClass('botao').removeClass('botaoLoading').val('Criar Conta').removeAttr('disabled');
 			$("#loginLoading").addClass('d-none');
 		   }
    });
