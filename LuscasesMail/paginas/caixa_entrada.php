@@ -27,19 +27,34 @@ if(!isset($_SESSION['user'])){
 		  <ul class="navbar-nav bd-navbar-nav flex-row">    
 				<span class="textNav">Logado como: <b><?php echo("{$_SESSION['user']}");?></b></span>
 		  </ul>
-         <a name="logout" class="btn btn-bd-download d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="../php/logout.php">Logout</a>
+         <a name="logout" class="btn btn-bd-logout d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="../php/logout.php">Logout</a>
       </header>
       <div class="container-fluid">
       <div class="row flex-xl-nowrap">
-         <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+         <div class="bd-sidebar">
+		 <div class="col-12">
             <form class="bd-search d-flex align-items-center">
                <input type="search" class="form-control ds-input" id="search-input" placeholder="Busca..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto">
             </form>
-            <div class="bd-toc-item">              
-               <div class="menuAtivo"><a class="bd-toc-link" href=""><div class="menuIcons"><i class="fas fa-inbox"></i></div><div class="menu">Inbox</div></a></div>
-			   <div class="menuNaoAtivo"><a class="bd-toc-link" href=""><div class="menuIcons"><i class="far fa-paper-plane"></i></div><div class="menu">Enviar</div></a></div>
-               <div class="menuNaoAtivo"><a class="bd-toc-link" href=""><div class="menuIcons"><i class="fas fa-trash"></i></div><div class="menu">Lixeira</div></a></div>
-            </div>
+			</div>
+		<a class="menuLink" href="">
+			<div class="menu pt-3 pb-3">			
+				<div class="menuIcon"><i class="fas fa-inbox"></i></div>
+				<div class="menuOpcao">Inbox</div>  			
+			</div>
+		</a>
+		<a class="menuLink" href="">
+		<div class="menu pt-3 pb-3">
+			<div class="menuIcon"><i class="far fa-paper-plane"></i></div>
+			<div class="menuOpcao">Enviar</div>  
+		</div>
+		</a>
+		<a class="menuLink" href="">
+		<div class="menu pt-3 pb-3">
+			<div class="menuIcon"><i class="fas fa-trash"></i></div>
+			<div class="menuOpcao">Lixeira</div>  
+		</div>
+		</a>
          </div>
          <main role="main" class="main border-right w-75">
             <h2 id="quick-start">
