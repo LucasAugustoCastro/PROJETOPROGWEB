@@ -20,7 +20,8 @@ $(document).ready(function(){
 	//Login
 	$('#loginform').submit(function(e) {
 	e.preventDefault();
-	$.ajax({
+   
+	$.ajax({ // Verificar info
 		type: "POST",		
 		url: 'php/login.php',
 		data: $(this).serialize(),
@@ -37,7 +38,9 @@ $(document).ready(function(){
 			{				
 				document.getElementById("divAviso").className = "loginSucess";				
 				document.getElementById("divAviso").innerHTML = "<br><h5>Logado com sucesso.</h5>";
-				//location.href = 'paginas/caixa_entrada.html';
+				window.location = "paginas/caixa_entrada.php";	
+				//location.href = 'paginas/caixa_entrada.html';	
+				
 			}
 			else
 			{
@@ -47,9 +50,10 @@ $(document).ready(function(){
 	   },
 	   complete:function(data){			
 			$("#botao").addClass('botao').removeClass('botaoLoading').val('Login').removeAttr('disabled');
-			$("#loginLoading").addClass('d-none'); 
+			$("#loginLoading").addClass('d-none'); 			
 		   }
    });
+
  });
  
  
