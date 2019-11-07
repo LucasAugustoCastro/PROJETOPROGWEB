@@ -25,7 +25,7 @@ if(!isset($_SESSION['user'])){
             </ul>        
          <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></ul>
 		  <ul class="navbar-nav bd-navbar-nav flex-row">    
-				<span class="textNav">Logado como: <b><?php echo("{$_SESSION['user']}");?></b></span>
+				<span class="textNav">Logado como: <span class="textNavUser"><?php echo("{$_SESSION['user']}");?>@mail.com</span></span>
 		  </ul>
          <a name="logout" class="btn btn-bd-logout d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="../php/logout.php">Logout</a>
       </header>
@@ -56,14 +56,15 @@ if(!isset($_SESSION['user'])){
 		</div>
 		</a>
          </div>
-         <main role="main" class="main border-right w-75">
+         <main role="main" class="maina border-right">
             <h2 id="quick-start">
                <div class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">Inbox</div>
             </h2>
             <a class="email-link" href=""><div class="divEmail p-3 text-dark border-top">email1</div></a>
             <a class="email-link" href=""><div class="divEmail p-3 text-dark border-top">email2</div></a>
             <a class="email-link" href=""><div class="divEmail p-3 text-dark border-top">email13</div></a>
-         </main>
+			<div class="border-top"></div>
+		</main>
       </div>
    </body>
 </html>

@@ -7,7 +7,7 @@ $(document).ready(function(){
 	   $(this).hide();
 	 });
 	
-	var bgColorArray = ['../img/bg/1.jpg','../img/bg/2.jpg'],
+	var bgColorArray = ['img/bg/1.jpg','img/bg/2.jpg'],
 		selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
 
 	$('body').css('background', 'url(' + selectBG + ')')
