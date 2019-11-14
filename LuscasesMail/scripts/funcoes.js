@@ -5,13 +5,8 @@ $(document).ready(function(){
 
 	$("#loading").ajaxStop(function () {
 	   $(this).hide();
-	 });
-	
-	var bgColorArray = ['img/bg/1.jpg','img/bg/2.jpg'],
-		selectBG = bgColorArray[Math.floor(Math.random() * bgColorArray.length)];
+	 });	
 
-	$('body').css('background', 'url(' + selectBG + ')')
-	
     $("#bEntrar").click(function(){
         fVerificarVazio();
         fVerificarSenha();
