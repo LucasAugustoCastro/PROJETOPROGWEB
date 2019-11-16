@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<inbox>
+	<email id="1" titulo="titulo teste" remetente="user" conteudo="mensagem teste"/>
+	<email id="2" titulo="titulo2 teste" remetente="user2" conteudo="mensagem teste2"/>
+</inbox>
