@@ -1,1 +1,1 @@
-http://luscasesmail.cf/
+https://luscasesmail.cf/
