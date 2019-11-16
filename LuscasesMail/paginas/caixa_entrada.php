@@ -25,7 +25,7 @@ if(!isset($_SESSION['user'])){
       </ul>        
       <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex"></ul>
       <ul class="navbar-nav bd-navbar-nav flex-row">    
-       <span class="textNav">Logado como: <span class="textNavUser"><?php echo("{$_SESSION['user']}");?>@mail.com</span></span>
+       <span class="textNav">Logado como: <span class="textNavUser"><?php echo("{$_SESSION['user']}");?>@lucasesmail.com</span></span>
     </ul>
     <a name="logout" class="btn btn-bd-logout d-none d-lg-inline-block mb-3 mb-md-0 ml-md-3" href="../php/logout.php">Logout</a>
  </header>

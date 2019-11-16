@@ -33,7 +33,7 @@ $xml_Enviados = $xmlEnviados->createElement("enviados");
 $xmlEnviados -> appendChild($xml_Enviados);
 
 $xml_userinfo->setAttribute("nome",$_POST['nome']);
-$xml_userinfo->setAttribute("email",$_POST['email']);
+$xml_userinfo->setAttribute("email",$_POST['email']."@luscasesmail.com");
 $xml_userinfo->setAttribute("senha",$_POST['senha']);
 
 foreach($xml_object as $users){		
