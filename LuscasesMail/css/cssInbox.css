@@ -9,6 +9,12 @@
 	top: 0;
 }
 
+i, input, button, submit { border:none; } 
+
+form{
+ margin:0px; padding:0px;
+}
+
 .textNavUser{
 	font-weight: bold;
 	color: #88ff84;	
@@ -20,21 +26,63 @@
 	color: #cccccc;
 }
 
+.divEmailResposta{
+	background-color: #f7f7f7;	
+	transition: all 0.2s ease 0s;
+}
+
 .divEmail{
 	background-color: #f7f7f7;	
+	transition: all 0.2s ease 0s;
+}
+
+.divEmailActive{
+	background-color: #d1d1d1;	
+}
+
+.divEmailConteudo{
+	display: none;
+	background-color: white;	
+}
+
+.divEmailConteudo:hover{
+	display: none;
+	background-color: white;	
+}
+
+.respondeIconButton{
+	background: none;
+}
+
+.respondeIcon{
+	transition: all 0.2s ease 0s;
+}
+
+.respondeIcon:hover{
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+	transform: scale(1.5);	
 }
 
 .maina{
 	min-width: 78%;
 }
 
-.divEmail:hover{
+.divEmail:hover{	
+	font-weight: bold;
 	cursor: pointer;
-	background-color: #d1d1d1;	
+	background-color: #d1d1d1;
+	transition: all 0.2s ease 0s;	
 }
 
-.menuActive{
-	background-color: #d1d1d1;	
+.divEmailIcon{
+	align-self:center;
+	color: dark;
+}
+
+.divEmailIcon:hover .divEmail:hover .divEmailIcon{
+	transition: all 0.2s ease 0s;
+	transform: scale(1.5);	
 }
 
 .email-link {
@@ -47,6 +95,7 @@
 	text-decoration: none
 }
 .menu{
+	transition: all 0.2s ease 0s;
 	padding: 1.25rem 2.5rem;
 	overflow:hidden;
 	position:relative;
@@ -67,13 +116,18 @@
 }
 
 .menu:hover{
-	background-color: #404040;	
+	background-color: #7a7a7a;	
 	color: white;
 }
 
 .menuIcon:hover, .menu:hover .menuIcon{
 	transition: all 0.2s ease 0s;
 	transform: scale(1.5);
+}
+
+.menuActive{
+	background-color: #404040;	
+	color: white;	
 }
 
 .loading {

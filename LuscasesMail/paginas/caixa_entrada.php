@@ -59,7 +59,7 @@ if(!isset($_SESSION['user'])){
    </div>
    <main role="main" class="maina border-right">		 
       <h2 id="quick-start">            			
-         <div id="titleAtual" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content">Inbox</div>
+         <div id="titleAtual" class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 bd-content"><i class="fas fa-envelope-open-text"></i> Inbox</div>
       </h2>
       <div class="border-top">
          <div class="container-fluid">

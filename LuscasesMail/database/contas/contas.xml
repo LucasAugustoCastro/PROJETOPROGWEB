@@ -1,4 +1,4 @@
 <?xml version="1.0"?>
 <contas>
-  <userinfo nome="a" email="a" senha="a"/>
-<userinfo nome="b" email="b" senha="b"/></contas>
+  <userinfo nome="a" email="a@luscasesmail.com" senha="a"/>
+<userinfo nome="b" email="b@luscasesmail.com" senha="b"/></contas>
