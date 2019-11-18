@@ -23,11 +23,11 @@ $(document).ready(function(){
 		if(Array.isArray(jsonData[i])) {
 			$.each(jsonData.email, function (i, item) {
 				console.log("TA AQ1")
-				divEmails += '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+item['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+item['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+item['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+item['@attributes'].id+'"" /><div id="'+item['@attributes'].id+'"" class="row divEmail p-3 text-dark border-bottom"><div class="col-3">'+item['@attributes'].remetente+'</div><div name="'+item['@attributes'].remetente+'"" class="col-6">'+item['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div>	<div id="'+item['@attributes'].id+'conteudo" class="row divEmailConteudo row p-3 text-dark border-bottom"><div class="col-">'+item['@attributes'].conteudo+'</div><div class="row"><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div></div></div></form>';
+				divEmails += '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+item['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+item['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+item['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+item['@attributes'].id+'"" /><div id="'+item['@attributes'].id+'"" class="row divEmail p-3 text-dark"><div class="col-3">De: '+item['@attributes'].remetente+'@luscasesmail.com</div><div name="'+item['@attributes'].remetente+'"" class="col-6">Titulo: '+item['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div>	<div id="'+item['@attributes'].id+'conteudo" class="row divEmailConteudo row p-3 text-dark"><div class="p-3 col-">'+item['@attributes'].conteudo+'</div><div class="row"><div class="col- pl-4 pt-3 pb-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div><div class="col-10"></div><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-trash-restore"></i></input></div></div></div></form><div class="row divEmail border-bottom"></div>';
 			});
 		} else {
 			console.log("TA AQ2")
-			divEmails = '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+jsonData.email['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+jsonData.email['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+jsonData.email['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+jsonData.email['@attributes'].id+'"" /><div class="row divEmail p-3 text-dark border-bottom"><div class="col-3">'+jsonData.email['@attributes'].remetente+'</div><div class="col-6">'+jsonData.email['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div> <div id="'+jsonData.email['@attributes'].id+'conteudo" class="row divEmailConteudo p-3 text-dark border-bottom"><div class="col-">'+jsonData.email['@attributes'].conteudo+'</div><div class="row"><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div></div></div></form>';
+			divEmails = '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+jsonData.email['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+jsonData.email['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+jsonData.email['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+jsonData.email['@attributes'].id+'"" /><div id="'+jsonData.email['@attributes'].id+'"" class="row divEmail p-3 text-dark"><div class="col-3">De: '+jsonData.email['@attributes'].remetente+'@luscasesmail.com</div><div class="col-6">Titulo: '+jsonData.email['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div> <div id="'+jsonData.email['@attributes'].id+'conteudo" class="row divEmailConteudo p-3 text-dark"><div p-3 class="col-">'+jsonData.email['@attributes'].conteudo+'</div><div class="row"><div class="col- pl-4 pt-3 pb-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div><div class="col-10"></div><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-trash-restore"></i></input></div></div></div></form><div class="row divEmail border-bottom"></div>';
 		}
 	}
 	$('#divChange').append(divEmails);	
@@ -58,11 +58,11 @@ complete:function(data){
 					if(Array.isArray(jsonData[i])) {
 						$.each(jsonData.email, function (i, item) {
 							console.log("TA AQ1")
-							divEmails += '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+item['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+item['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+item['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+item['@attributes'].id+'"" /><div id="'+item['@attributes'].id+'"" class="row divEmail p-3 text-dark border-bottom"><div class="col-3">'+item['@attributes'].remetente+'</div><div name="'+item['@attributes'].remetente+'"" class="col-6">'+item['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div>	<div id="'+item['@attributes'].id+'conteudo" class="row divEmailConteudo row p-3 text-dark border-bottom"><div class="col-">'+item['@attributes'].conteudo+'</div><div class="row"><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div></div></div></form>';
+							divEmails += '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+item['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+item['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+item['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+item['@attributes'].id+'"" /><div id="'+item['@attributes'].id+'"" class="row divEmail p-3 text-dark"><div class="col-3">De: '+item['@attributes'].remetente+'@luscasesmail.com</div><div name="'+item['@attributes'].remetente+'"" class="col-6">Titulo: '+item['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div>	<div id="'+item['@attributes'].id+'conteudo" class="row divEmailConteudo row p-3 text-dark"><div class="p-3 col-">'+item['@attributes'].conteudo+'</div><div class="row"><div class="col- pl-4 pt-3 pb-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div><div class="col-10"></div><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-trash-restore"></i></input></div></div></div></form><div class="row divEmail border-bottom"></div>';
 						});
 					} else {
 						console.log("TA AQ2")
-						divEmails = '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+jsonData.email['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+jsonData.email['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+jsonData.email['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+jsonData.email['@attributes'].id+'"" /><div class="row divEmail p-3 text-dark border-bottom"><div class="col-3">'+jsonData.email['@attributes'].remetente+'</div><div class="col-6">'+jsonData.email['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div> <div id="'+jsonData.email['@attributes'].id+'conteudo" class="row divEmailConteudo p-3 text-dark border-bottom"><div class="col-">'+jsonData.email['@attributes'].conteudo+'</div><div class="row"><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div></div></div></form>';
+						divEmails = '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+jsonData.email['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+jsonData.email['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+jsonData.email['@attributes'].remetente+'"" /><input type="hidden" name="id" value="'+jsonData.email['@attributes'].id+'"" /><div id="'+jsonData.email['@attributes'].id+'"" class="row divEmail p-3 text-dark"><div class="col-3">De: '+jsonData.email['@attributes'].remetente+'@luscasesmail.com</div><div class="col-6">Titulo: '+jsonData.email['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div> <div id="'+jsonData.email['@attributes'].id+'conteudo" class="row divEmailConteudo p-3 text-dark"><div p-3 class="col-">'+jsonData.email['@attributes'].conteudo+'</div><div class="row"><div class="col- pl-4 pt-3 pb-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-reply"></i></input></div><div class="col-10"></div><div class="col- p-3 respondeIcon"><button class="respondeIconButton" type="submit"><i class="fas fa-trash-restore"></i></input></div></div></div></form><div class="row divEmail border-bottom"></div>';
 					}
 				}				
 				$('#divChange').append(divEmails);	
@@ -73,23 +73,12 @@ complete:function(data){
 	});	
 
 	$('#enviarPage').click(function() {	   
-		$.ajax({ 
-			type: "POST",		
-			url: '../php/inbox.php',
-			data: $(this).serialize(),
-			beforeSend: function(){		
-				document.getElementById('titleAtual').innerHTML = "<i class='fas fa-paper-plane'></i> Enviar"	
-				document.getElementById('inboxPage').classList.remove("menuActive");
-				document.getElementById('enviarPage').classList.add("menuActive");	
-				document.getElementById('lixeiraPage').classList.remove("menuActive");	
-				document.getElementById('divChange').innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";	
-			},
-			success: function(response)
-			{
-			},
-			complete:function(data){			
-			}
-		});
+		document.getElementById('titleAtual').innerHTML = "<i class='fas fa-paper-plane'></i> Enviar"	
+		document.getElementById('inboxPage').classList.remove("menuActive");
+		document.getElementById('enviarPage').classList.add("menuActive");	
+		document.getElementById('lixeiraPage').classList.remove("menuActive");	
+		document.getElementById('divChange').innerHTML = "<br><img src='../img/loading.svg' width='32px' height='32px'>";		
+		document.getElementById('divChange').innerHTML = '<form id="enviarEmail" method="post"><div class="form-group"><div class="p-3">Email</div><input name="email" required type="email" class="form-control" placeholder="name@luscasesmail.com"></div><div class="form-group"><div class="pl-3 pb-3">Titulo</div><input required name="titulo" class="form-control" placeholder=""></div><div class="form-group"><div class="pl-3 pb-3">Mensagem</div><textarea required class="form-control" name="mensagem" rows="3"></textarea></div><div class="pl-3 pb-3"><button type="submit" class="btn btn-dark">Enviar</button></div></form><div class="pl-3" id="resposta"></div>';
 	});	
 
 	$('#lixeiraPage').click(function() {	   
@@ -131,13 +120,37 @@ complete:function(data){
 			success: function(response){
 				document.getElementById('divChange').innerHTML = "";
 				var jsonData = JSON.parse(response);
-				console.log(jsonData);
-
-				var divEmails = '<form id="enviarResposta" method="post"><input type="hidden" name="titulo" value="'+jsonData.titulo+'"" /><input type="hidden" name="remetente" value="'+jsonData.remetente+'"" /><div class="row"><div class="col- divEmailResposta p-3 text-dark border-right border-bottom">Responder: '+jsonData.remetente+'</div><div class="p-3 col- divEmailResposta border-right border-bottom">'+jsonData.conteudo+'</div><div></div><div class="input-group"><div class="input-group-prepend"><span class="input-group-text">Mensagem</span></div><textarea name="conteudoR" class="form-control" aria-label="Mensagem"></textarea></div><div class="p-3"><button type="submit" class="btn btn-dark">Enviar</button></div></form>';
-				$('#divChange').append(divEmails);
-
+				document.getElementById('divChange').innerHTML = '<form id="enviarResposta" method="post"><input type="hidden" name="titulo" value="'+jsonData.titulo+'"" /><input type="hidden" name="remetente" value="'+jsonData.remetente+'"" /><div class="form-group"><div class="p-3">Responder</div><input disabled class="form-control" placeholder="'+jsonData.remetente+'@luscasesmail.com"></div><div class="form-group"><div class="pl-3 pb-3">Titulo</div><input disabled class="form-control" placeholder="Re: '+jsonData.titulo+'"></div><div class="form-group"><div class="pl-3 pb-3">Mensagem</div><textarea disabled class="form-control" placeholder="'+jsonData.conteudo+'" rows="3"></textarea></div><div class="form-group"><div class="pl-3 pb-3">Resposta</div><textarea required class="form-control" name="conteudoR" rows="3"></textarea></div><div class="pl-3 pb-3"><button type="submit" class="btn btn-dark">Enviar</button></div></form><div class="pl-3" id="resposta"></div>';
 			},
 			complete:function(data){			
+			}
+		});
+	});	
+
+	//enviar email
+	$('#divChange').on('submit', '#enviarEmail', function(e){
+		e.preventDefault();
+		$.ajax({ 
+			type: "POST",		
+			url: '../php/enviarEmail.php',
+			data: $(this).serialize(),
+			beforeSend: function(){		
+			},
+			success: function(response){				
+				var jsonData = JSON.parse(response);
+				if (jsonData.success == 0){
+					document.getElementById('resposta').innerHTML = "<div id='resposta' class='p-3'>Mensagem enviada com sucesso.</div>";	
+				}
+				else if(jsonData.success == 1){
+					document.getElementById('resposta').innerHTML = "<div id='resposta' class='p-3'>Email nao encontrado :(</div>"	
+				}
+				else{
+					document.getElementById('resposta').innerHTML = "<div id='resposta' class='p-3'>erro :(</div>";	
+
+				}
+			},
+			complete:function(data){	
+				//window.location("http://localhost/paginas/caixa_entrada.php");	
 			}
 		});
 	});	
@@ -145,25 +158,24 @@ complete:function(data){
 	//enviar resposta
 	$('#divChange').on('submit', '#enviarResposta', function(e){
 		e.preventDefault();
-
 		$.ajax({ 
 			type: "POST",		
-			url: '../php/enviar.php',
+			url: '../php/enviarResposta.php',
 			data: $(this).serialize(),
 			beforeSend: function(){		
 			},
 			success: function(response){				
 				var jsonData = JSON.parse(response);
 				if (jsonData.success == 0){
-					document.getElementById('divChange').innerHTML = "Mensagem enviada com sucesso.";	
+					document.getElementById('resposta').innerHTML = "<div id='resposta' class='p-3'>Mensagem enviada com sucesso.</div>";	
 				}
 				else{
-					document.getElementById('divChange').innerHTML = "erro :(";	
+					document.getElementById('resposta').innerHTML = "<div id='resposta' class='p-3'>erro :(</div>";		
 
 				}
 			},
 			complete:function(data){	
-				window.location("http://localhost/paginas/caixa_entrada.php");	
+				//window.location("http://localhost/paginas/caixa_entrada.php");	
 			}
 		});
 	});	

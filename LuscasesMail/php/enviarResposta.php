@@ -3,6 +3,7 @@ session_start();
 $xml_object = simplexml_load_file("../database/email/inbox/".$_POST['remetente'].".xml") or die("Error: Cannot create object");
 $xml_remetente = new DOMDocument("1.0");
 $xml_remetente->formatOutput = true;
+$xml_remetente->preserveWhiteSpace = false;
 $xml_remetente->load("../database/email/inbox/".$_POST['remetente'].".xml") or die("Error: Cannot create object");
 
 //$xml2 = new DOMDocument("1.0");

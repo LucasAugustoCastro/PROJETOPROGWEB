@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <inbox>
-  <email id="0" remetente="admin" titulo="temp inbox" conteudo="temp inbox conteudo"/>
+  <email id="0" titulo="titulo teste" remetente="b" conteudo="mensagem teste"/>
+  <email id="1" remetente="a" titulo="Re: titulo teste" conteudo="aaaaaaaaaaaa"/>
+  <email id="2" remetente="a" titulo="Re: titulo teste" conteudo="dsadsa"/>
 </inbox>

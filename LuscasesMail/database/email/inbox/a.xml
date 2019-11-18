@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
 <inbox>
-	<email id="0" titulo="titulo teste" remetente="b" conteudo="mensagem teste"/>
-	</inbox>
+  <email id="0" titulo="titulo teste" remetente="b" conteudo="mensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem testemensagem teste"/>
+  <email id="1" remetente="a" titulo="AAAAAAAA" conteudo="DSADSA"/>
+  <email id="2" remetente="a" titulo="dsaddsa" conteudo="dsa"/>
+</inbox>
