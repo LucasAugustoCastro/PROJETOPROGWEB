@@ -45,12 +45,15 @@ if(!isset($_SESSION['user'])){
           <div class="menuOpcao">Inbox</div>  			
        </div>
 
-
        <div id="enviarPage" class="menu pt-3 pb-3">
          <div class="menuIcon"><i class="far fa-paper-plane"></i></div>
          <div class="menuOpcao">Enviar</div>  
       </div>
 
+       <div id="enviadosPage" class="menu pt-3 pb-3">
+         <div class="menuIcon"><i class="fas fa-share-square"></i></div>
+         <div class="menuOpcao">Enviados</div>  
+      </div>
 
       <div id="lixeiraPage" class="menu pt-3 pb-3">
          <div class="menuIcon"><i class="fas fa-trash"></i></div>
