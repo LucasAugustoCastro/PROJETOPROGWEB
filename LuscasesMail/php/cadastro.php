@@ -31,6 +31,9 @@ $xmlLixeira -> appendChild($xml_Lixeira);
 //xml enviados
 $xml_Enviados = $xmlEnviados->createElement("enviados");
 $xmlEnviados -> appendChild($xml_Enviados);
+$xml_Enviados_email = $xmlEnviados->createElement("email");
+$xml_Enviados -> appendChild($xml_Enviados_email);
+$xml_Enviados_email -> setAttribute("id", "temp");
 
 $xml_userinfo->setAttribute("nome",$_POST['nome']);
 $xml_userinfo->setAttribute("email",$_POST['email']."@luscasesmail.com");

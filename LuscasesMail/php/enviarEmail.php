@@ -2,6 +2,8 @@
 session_start(); 
 
 $xml_remetente = new DOMDocument("1.0");
+$xml_enviado = new DOMDocument("1.0");
+
 $xml_remetente->formatOutput = true;
 $xml_remetente->preserveWhiteSpace = false;
 $xml_object2 = simplexml_load_file('../database/contas/contas.xml') or die("Error: 1 Cannot create object");
@@ -26,6 +28,8 @@ foreach($xml_object2 as $users){
 
 		$xml_enviado->load("../database/email/enviado/".$_SESSION['user'].".xml") or die("Error:4 Cannot create object");
 		$xml_enviado_object = simplexml_load_file("../database/email/enviado/".$_SESSION['user'].".xml") or die("Error:5 Cannot create object");
+
+		
 		$xml_enviado_email= $xml_enviado->createElement("email");
 
 		$cont2 = $xml_enviado_object->count();

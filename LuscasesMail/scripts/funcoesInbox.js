@@ -149,19 +149,26 @@ $('#enviadosPage').click(function() {
 							divEmails += '<div id="'+item['@attributes'].id+'"" class="row divEmail p-3 text-dark"><div class"col-2"><img src="https://ui-avatars.com/api/?length=2&size=32&rounded=true&background='+corRandom.b+'&color='+corRandom.t+'&name='+item['@attributes'].para+'"></div><div class="col-3">Para: '+item['@attributes'].para+'@luscasesmail.com</div><div name="'+item['@attributes'].para+'"" class="col-6">Titulo: '+item['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div>	<div id="'+item['@attributes'].id+'conteudo" class="row divEmailConteudo row p-3 text-dark"><div class="p-3 col-">'+item['@attributes'].conteudo+'</div><div class="row"><div class="col-10"></div><div class="col- p-3 respondeIcon"><button class="respondeIconButton"><i class="fas fa-trash-restore"></i></div></div></div><div class="row divEmail border-bottom"></div>';
 						});
 					} else {
-						$.ajax({
-							url: 'https://gist.githubusercontent.com/HRankit/5fc47a4dc534a4a769992e05b86ab43d/raw/bb86e3859828ae4e86e95c9e339c8e55012062c2/BackgroundColorAndTextColor.json',
-							async: false,
-							dataType: 'json',
-							success: function (data) {
-								corRandom = data[Math.floor(Math.random() * data.length)];
-							}
-						});
-						console.log("TA AQ2")
-						divEmails = '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+jsonData.email['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+jsonData.email['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+jsonData.email['@attributes'].para+'"" /><input type="hidden" name="id" value="'+jsonData.email['@attributes'].id+'"" /><div id="'+jsonData.email['@attributes'].id+'"" class="row divEmail p-3 text-dark"><div class"col-2"><img src="https://ui-avatars.com/api/?length=2&size=32&rounded=true&background='+corRandom.b+'&color='+corRandom.t+'&name='+jsonData.email['@attributes'].para+'"></div><div class="col-3">Para: '+jsonData.email['@attributes'].para+'@luscasesmail.com</div><div class="col-6">Titulo: '+jsonData.email['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div> <div id="'+jsonData.email['@attributes'].id+'conteudo" class="row divEmailConteudo p-3 text-dark"><div p-3 class="col-">'+jsonData.email['@attributes'].conteudo+'</div><div class="row"><div class="col-10"></div><div class="col- p-3 respondeIcon"><button class="respondeIconButton"><i class="fas fa-trash-restore"></i></input></div></div></div></form><div class="row divEmail border-bottom"></div>';
-					}
-				}				
-				$('#divChange').append(divEmails);	
+						if(jsonData.success == 1){
+							console.log("TA A3")						
+							document.getElementById('divChange').innerHTML = "<div class='pb-3'></div><div class='p-6 alert alert-danger' role='alert'>Nenhum email enviado.</div>";
+							break
+						}else{
+							$.ajax({
+								url: 'https://gist.githubusercontent.com/HRankit/5fc47a4dc534a4a769992e05b86ab43d/raw/bb86e3859828ae4e86e95c9e339c8e55012062c2/BackgroundColorAndTextColor.json',
+								async: false,
+								dataType: 'json',
+								success: function (data) {
+									corRandom = data[Math.floor(Math.random() * data.length)];
+								}
+							});
+							console.log("TA AQ2")
+							divEmails = '<form id="replyForm" method="post"><input type="hidden" name="titulo" value="'+jsonData.email['@attributes'].titulo+'"" /><input type="hidden" name="conteudo" value="'+jsonData.email['@attributes'].conteudo+'"" /><input type="hidden" name="remetente" value="'+jsonData.email['@attributes'].para+'"" /><input type="hidden" name="id" value="'+jsonData.email['@attributes'].id+'"" /><div id="'+jsonData.email['@attributes'].id+'"" class="row divEmail p-3 text-dark"><div class"col-2"><img src="https://ui-avatars.com/api/?length=2&size=32&rounded=true&background='+corRandom.b+'&color='+corRandom.t+'&name='+jsonData.email['@attributes'].para+'"></div><div class="col-3">Para: '+jsonData.email['@attributes'].para+'@luscasesmail.com</div><div class="col-6">Titulo: '+jsonData.email['@attributes'].titulo+'</div><div class="col-1 divEmailIcon"><i class="far fa-eye"></i></div></div> <div id="'+jsonData.email['@attributes'].id+'conteudo" class="row divEmailConteudo p-3 text-dark"><div p-3 class="col-">'+jsonData.email['@attributes'].conteudo+'</div><div class="row"><div class="col-10"></div><div class="col- p-3 respondeIcon"><button class="respondeIconButton"><i class="fas fa-trash-restore"></i></input></div></div></div></form><div class="row divEmail border-bottom"></div>';
+						}
+					}				
+					
+				}
+				$('#divChange').append(divEmails);
 			},
 			complete:function(data){			
 			}
@@ -228,7 +235,7 @@ $('#lixeiraPage').click(function() {
 	});
 
 	//deletar inbox
-		$('#divChange').on('click', '#deletar', function (){      	
+	$('#divChange').on('click', '#deletar', function (){      	
 		$('#divChange').on('submit', '#replyForm', function(e){
 			$.ajax({ 
 				type: "POST",		
@@ -238,13 +245,13 @@ $('#lixeiraPage').click(function() {
 				},
 				success: function(response){
 					if (jsonData.success == 0){						
-					var jsonData = JSON.parse(response);
-					document.getElementById('divChange').innerHTML = "<div id='resposta' class='p-3 alert alert-danger' role='alert'>foi(</div>";
-				}
+						var jsonData = JSON.parse(response);
+						document.getElementById('divChange').innerHTML = "<div id='resposta' class='p-3 alert alert-danger' role='alert'>foi(</div>";
+					}
 					else{
-					document.getElementById('divChange').innerHTML = "<div id='resposta' class='p-3 alert alert-danger' role='alert'>erro :(</div>";	
+						document.getElementById('divChange').innerHTML = "<div id='resposta' class='p-3 alert alert-danger' role='alert'>erro :(</div>";	
 
-				}
+					}
 				},
 				complete:function(data){			
 				}

@@ -1,13 +1,15 @@
 <?php
+session_start(); // nova sessao
+
 function busca($query, $path) {
-    $corpus = getCorpus($path);
+    
     
     $emails = [];
-
-    foreach($corpus as $text) {
-        $coe = coeficiente_similaridade($query, $text, $corpus);
+    
+    foreach(getCorpus($path) as $text) {
+        $coe = coeficiente_similaridade($query, $text, getCorpus($path));
         if($coe > 0) {
-            array_push($emails, array_search($text, $corpus));
+            array_push($emails, array_search($text, getCorpus($path)));
         }
     }
     getEmails($path, $emails);
@@ -27,7 +29,7 @@ function tf_idf($keyword, $text, $corpus) {
 
 function term_freq($keyword, $corpus) {
     $freq = 0;
-    $exploded_corpus = explode(" ", $corpus)
+    $exploded_corpus = explode(" ", $corpus);
     foreach($exploded_corpus as $word) {
         if($word == $keyword) {
             $freq = $freq + 1;
@@ -51,24 +53,23 @@ function doc_contain_term($keyword, $corpus) {
 
 function bag_of_words($corpus) {
     $bag = [];
+        if (is_array($corpus)){
     foreach($corpus as $phrase) {
         $exploded_phrase = explode(" ", $phrase);
         foreach($exploded_phrase as $word) {
             if(!in_array($word, $bag)) {
                 array_push($bag, $word);
             }
-        }
+        }}
     }
 }
 
 function coeficiente_similaridade($keyword, $text, $corpus) {
-    $text_bag = bag_of_words($corpus);
     $soma = 0;
-
-    foreach($text_bag as $word) {
+    foreach(bag_of_words($corpus) as $word) {
         $dij = tf_idf($word, $text, $corpus);
         $wqj = tf_idf($keyword, $text, $corpus);
-        $soma = $soma + $dij * $wqj
+        $soma = $soma + $dij * $wqj;
     }
     return $soma;
 }
@@ -99,4 +100,7 @@ function getEmails($path, $lista) {
     $xml->appendChild($xml_inbox);
     $xml->save('../database/email/busca/'.$_SESSION['user'].'.xml');
 }
+
+busca('aa', 'email/inbox/'.$_SESSION['user'].'.xml');
+
 ?>
