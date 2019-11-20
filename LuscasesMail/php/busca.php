@@ -2,14 +2,12 @@
 session_start(); // nova sessao
 
 function busca($query, $path) {
-    
-    
+    $corpus = getCorpus($path);
     $emails = [];
-    
-    foreach(getCorpus($path) as $text) {
-        $coe = coeficiente_similaridade($query, $text, getCorpus($path));
+    foreach($corpus as $text) {
+        $coe = coeficiente_similaridade($query, $text, $corpus);
         if($coe > 0) {
-            array_push($emails, array_search($text, getCorpus($path)));
+            array_push($emails, array_search($text, $corpus));
         }
     }
     getEmails($path, $emails);
@@ -18,7 +16,11 @@ function busca($query, $path) {
 function idf($keyword, $corpus) {
     $n = count($corpus);
     $dft = doc_contain_term($keyword, $corpus);
-    return log10($n/$dft);
+    if($dft != 0) {
+        return log10($n/$dft);
+    } else {
+        return 0;
+    }
 }
 
 function tf_idf($keyword, $text, $corpus) {
@@ -35,9 +37,7 @@ function term_freq($keyword, $corpus) {
             $freq = $freq + 1;
         }
     }
-    if($freq == 0){
-        return 0;
-    }
+
     return $freq / count($exploded_corpus);
 }
 
@@ -53,22 +53,24 @@ function doc_contain_term($keyword, $corpus) {
 
 function bag_of_words($corpus) {
     $bag = [];
-        if (is_array($corpus)){
     foreach($corpus as $phrase) {
         $exploded_phrase = explode(" ", $phrase);
         foreach($exploded_phrase as $word) {
             if(!in_array($word, $bag)) {
                 array_push($bag, $word);
             }
-        }}
+        }
     }
+    return $bag;
 }
 
 function coeficiente_similaridade($keyword, $text, $corpus) {
+    $text_bag = bag_of_words($corpus);
     $soma = 0;
-    foreach(bag_of_words($corpus) as $word) {
-        $dij = tf_idf($word, $text, $corpus);
-        $wqj = tf_idf($keyword, $text, $corpus);
+
+    foreach($text_bag as $word) {
+        $dij= tf_idf($word, $text, $corpus);
+        $wqj = tf_idf($word, $keyword, $corpus);
         $soma = $soma + $dij * $wqj;
     }
     return $soma;
@@ -78,7 +80,7 @@ function getCorpus($path) {
     $xml_object = simplexml_load_file('../database/'.$path) or die("Error: Cannot create object");
     $corpus = [];
     foreach($xml_object as $mensagem){
-        $text = $mensagem['remetente']." ".$mensagem['titulo']." ".$mensagem['conteudo'];
+        $text = "HnNhabsdBHaivf328Hnas8 ".$mensagem['remetente']." ".$mensagem['titulo']." ".$mensagem['conteudo'];
         array_push($corpus, $text);
     }
     return $corpus;
@@ -87,20 +89,35 @@ function getCorpus($path) {
 function getEmails($path, $lista) {
     $xml_object = simplexml_load_file('../database/'.$path) or die("Error: Cannot create object");
     $corpus = [];
-    foreach($lista as $email){
-        $text = $xml_object->$mensagem[$email];
-        array_push($corpus, $text);
-    }
 
     $xml = new DOMDocument("1.0");
+    
     $xml_inbox = $xml->createElement("inbox");
-    foreach($corpus as $email) {
-        $xml_inbox->appendChild($email);
+
+    foreach($lista as $mail){
+        $id = $xml_object->email[$mail]['id'];
+        $remetente = $xml_object->email[$mail]['remetente'];
+        $titulo = $xml_object->email[$mail]['titulo'];
+        $conteudo = $xml_object->email[$mail]['conteudo'];
+
+        $xml_email = $xml-> createElement("email");
+        $xml_email->setAttribute("id", $id);
+        $xml_email->setAttribute("remetente", $remetente);
+        $xml_email->setAttribute("titulo", $titulo);
+        $xml_email->setAttribute("conteudo", $conteudo);
+
+        $xml_inbox->appendChild($xml_email);
     }
+
     $xml->appendChild($xml_inbox);
     $xml->save('../database/email/busca/'.$_SESSION['user'].'.xml');
 }
 
-busca('aa', 'email/inbox/'.$_SESSION['user'].'.xml');
+busca($_POST['search-input'], 'email/inbox/'.$_SESSION['user'].'.xml');
+
+$xml_resultado = simplexml_load_file('../database/email/busca/'.$_SESSION['user'].'.xml') or die(json_encode(array('success' => 1)));
+
+echo json_encode($xml_resultado);
+
 
 ?>

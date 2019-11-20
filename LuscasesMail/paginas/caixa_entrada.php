@@ -34,8 +34,9 @@ if(!isset($_SESSION['user'])){
    <div class="row flex-xl-nowrap">
       <div class="bd-sidebar">
          <div class="col-12">
-            <form class="bd-search d-flex align-items-center">
-               <input type="search" class="form-control ds-input" id="search-input" placeholder="Busca..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto">
+            <form method="post" id="buscar" class="bd-search d-flex align-items-center">
+          <i class="fas fa-search pr-3" aria-hidden="true"></i>
+               <input type="search" class="form-control ds-input"name="search-input" placeholder="Busca..." aria-label="Search for..." autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto">
             </form>
          </div>
 
