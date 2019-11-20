@@ -1,6 +1,16 @@
 <?php
 function busca($query, $path) {
+    $corpus = getCorpus($path);
+    
+    $emails = [];
 
+    foreach($corpus as $text) {
+        $coe = coeficiente_similaridade($query, $text, $corpus);
+        if($coe > 0) {
+            array_push($emails, array_search($text, $corpus));
+        }
+    }
+    getEmails($path, $emails);
 }
 
 function idf($keyword, $corpus) {
@@ -52,16 +62,41 @@ function bag_of_words($corpus) {
 }
 
 function coeficiente_similaridade($keyword, $text, $corpus) {
-    
+    $text_bag = bag_of_words($corpus);
+    $soma = 0;
+
+    foreach($text_bag as $word) {
+        $dij = tf_idf($word, $text, $corpus);
+        $wqj = tf_idf($keyword, $text, $corpus);
+        $soma = $soma + $dij * $wqj
+    }
+    return $soma;
 }
 
 function getCorpus($path) {
     $xml_object = simplexml_load_file('../database/'.$path) or die("Error: Cannot create object");
     $corpus = [];
     foreach($xml_object as $mensagem){
-        $text = $mensagem['de']." ".$mensagem['cc']." ".$mensagem['assunto']." ".$mensagem['mensagem'];
+        $text = $mensagem['remetente']." ".$mensagem['titulo']." ".$mensagem['conteudo'];
         array_push($corpus, $text);
     }
     return $corpus;
+}
+
+function getEmails($path, $lista) {
+    $xml_object = simplexml_load_file('../database/'.$path) or die("Error: Cannot create object");
+    $corpus = [];
+    foreach($lista as $email){
+        $text = $xml_object->$mensagem[$email];
+        array_push($corpus, $text);
+    }
+
+    $xml = new DOMDocument("1.0");
+    $xml_inbox = $xml->createElement("inbox");
+    foreach($corpus as $email) {
+        $xml_inbox->appendChild($email);
+    }
+    $xml->appendChild($xml_inbox);
+    $xml->save('../database/email/busca/'.$_SESSION['user'].'.xml');
 }
 ?>
